@@ -1,6 +1,3 @@
 RewriteEngine On
-RewriteBase /
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteBase /incentivo/
 RewriteRule ^(.*)$ index.php [QSA,L]

@@ -137,17 +137,6 @@ class BaseCalificacion {
 
     }    
 
-   public function obtenerExistente__r__obtener__documentos__2() {
-
-       extract($_POST);
-
-       $purifier = $this->constructor__seguridad->purificar();
-       $this->constructor__seguridad->purifyFormData($_POST, $purifier);
-
-       $jason['docuRuta']=$this->constructor->obtenerExistente__r__obtener__documentos__2($docuRuta,$carpeta);
-       echo json_encode($jason);
-
-    }    
 
     public function obtenerExistente__r() {
 

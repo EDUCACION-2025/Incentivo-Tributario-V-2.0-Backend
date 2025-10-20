@@ -46,7 +46,6 @@ class ControllersCalificacion{
 
         $this->baseServidorFtp='/home/incentivoTributario__firma/';
         $this->baseServidorFtp__archivos='/home/repositorio/incentivoTributario/documentos/';
-        $this->baseServidorFtp__archivos__2='/home/repositorio/incentivo2.0/';
 
 
     }
@@ -3017,6 +3016,7 @@ class ControllersCalificacion{
             if ($tipo==="borrador") {
                 $codigoEnviar=$codigo."__temporal";
             }else if($tipo==="observado"){
+
                 $consultaCodigoEnviado=$this->constructor->select__general__incentivo("SELECT codigo,id FROM proyecto_enviado WHERE codigoUsuario='$codigo';");
                 foreach ($consultaCodigoEnviado as $valor) {
                     $codigoString=$valor["codigo"];
@@ -3386,19 +3386,6 @@ class ControllersCalificacion{
 
         if(!empty($docu)){
             $remote_file = $this->baseServidorFtp__archivos.$carpeta.'/'.$docu;
-            $local_file = $docu;
-
-            return $this->constructor->sftp__servicios($remote_file,$local_file);
-            // return $this->constructor->select__archivo__natural__ruta('repositorio/incentivo2.0/seguimiento/'.$docu);
-        }
-
-
-    } 
-
-    public function obtenerExistente__r__obtener__documentos__2($docu,$carpeta) {
-
-        if(!empty($docu)){
-            $remote_file = $this->baseServidorFtp__archivos__2.$carpeta.'/'.$docu;
             $local_file = $docu;
 
             return $this->constructor->sftp__servicios($remote_file,$local_file);

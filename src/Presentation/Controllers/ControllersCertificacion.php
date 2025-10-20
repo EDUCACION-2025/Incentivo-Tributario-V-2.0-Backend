@@ -242,6 +242,8 @@ class ControllersCertificacion {
         return "EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='1') AND c.idSector=a1.idSector)";
       }else if (intval($fisicamenteEstructura)===24 || intval($fisicamenteEstructura)===12){
         return "EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='2' OR c.idSector='3') AND c.idSector=a1.idSector)";
+      }else if(intval($fisicamenteEstructura)===43){
+        return "EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='5') AND c.idSector=a1.idSector) || EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='4') AND c.idSector=a1.idSector) || EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='1') AND c.idSector=a1.idSector) || EXISTS (SELECT a1.idSector FROM sector AS a1 WHERE (c.idSector='2' OR c.idSector='3') AND c.idSector=a1.idSector)";
       }
 
     }
